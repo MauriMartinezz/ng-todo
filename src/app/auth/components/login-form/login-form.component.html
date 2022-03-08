@@ -1,33 +1,49 @@
-<div class="card mx-auto" style="max-width: 800px">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="..." class="img-fluid rounded-start" alt="..." />
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Login</h5>
-        <div class="mb-3">
-          <label for="formGroupExampleInput" class="form-label"
-            >Example label</label
-          >
+<div class="login-form mx-auto" style="max-width: 700px">
+  <div class="card text-center pt-4">
+    <!-- <div class="card-header">Login</div> -->
+    <img src="/assets/avatar.png" class="img" alt="" />
+    <div class="card-body">
+      <form class="form" [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="mb-3 text-start">
+          <label for="user" class="form-label">User or email</label>
           <input
             type="text"
             class="form-control"
-            id="formGroupExampleInput"
-            placeholder="Example input placeholder"
+            id="user"
+            placeholder="user@mail.com"
+            formControlName="username"
           />
         </div>
-        <div class="mb-3">
-          <label for="formGroupExampleInput2" class="form-label"
-            >Another label</label
-          >
+        <div class="mb-3 text-start">
+          <label for="password" class="form-label">Password</label>
           <input
             type="text"
             class="form-control"
-            id="formGroupExampleInput2"
-            placeholder="Another input placeholder"
+            id="password"
+            placeholder="Password"
+            formControlName="password"
           />
         </div>
+        <div class="buttons">
+          <button
+            class="btn w-100 mb-3 text-white"
+            style="background-color: #5e7eaf"
+          >
+            Login
+          </button>
+          <button
+            class="btn w-100 text-white"
+            style="background-color: rgb(211, 77, 77)"
+          >
+            Login with google
+          </button>
+        </div>
+      </form>
+      <div class="card__redirect my-4 text-start text-body">
+        <span
+          >Don't have an account?
+          <a routerLink="/auth/register">Sign up here.</a></span
+        >
       </div>
     </div>
   </div>

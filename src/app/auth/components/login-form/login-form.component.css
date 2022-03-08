@@ -1,0 +1,25 @@
+.card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  border: 5px solid #749bd6;
+  box-shadow: 0px 0px 10px #486592;
+}
+
+.card .card-body input {
+  border-radius: 15px;
+}
+.card .card-body .buttons button {
+  border-radius: 15px;
+  font-size: 18px;
+}
+.card .img {
+  bottom: calc(100% - 60px);
+  left: calc(50% - 60px);
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  border: 5px solid #749bd6;
+  border-radius: 50%;
+}

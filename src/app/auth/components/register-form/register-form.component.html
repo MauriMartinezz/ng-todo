@@ -1,1 +1,84 @@
-<p>register-form works!</p>
+<div class="card" style="width: 800px">
+  <div class="card-body">
+    <h2 class="card-title mb-4">Create an account</h2>
+
+    <form class="row g-3" [formGroup]="registerForm" (ngSubmit)="sendForm()">
+      <div class="col-md-6">
+        <label class="form-label">Name</label>
+        <input
+          type="email"
+          class="form-control"
+          placeholder="John"
+          formControlName="name"
+        />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Last Name</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Doe"
+          formControlName="lastName"
+        />
+      </div>
+      <div class="col-12">
+        <label class="form-label">email</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="jhon@mail.com"
+          formControlName="email"
+        />
+      </div>
+
+      <div class="col-6">
+        <label class="form-label">password</label>
+        <input
+          type="password"
+          class="form-control"
+          formControlName="password"
+        />
+      </div>
+
+      <div class="col-6">
+        <label class="form-label">confirm password</label>
+        <input
+          type="password"
+          class="form-control"
+          formControlName="confirmPassword"
+        />
+      </div>
+      <div class="col-12">
+        <button
+          type="submit"
+          class="btn w-100 text-white"
+          style="background-color: #5e7eaf; font-size: 18px"
+          [disabled]="registerForm.invalid"
+        >
+          Register
+        </button>
+      </div>
+
+      <div class="col-12">
+        <button
+          class="btn w-100 text-white"
+          style="background-color: rgb(211, 77, 77); font-size: 18px"
+        >
+          Register with google
+        </button>
+      </div>
+    </form>
+    <div class="card-text my-3">
+      <span>
+        Already have an account? <a routerLink="/auth/login">Login here</a>
+      </span>
+    </div>
+  </div>
+
+  <pre>
+    {{ registerForm.value | json }}
+  </pre>
+  <pre>
+    {{ registerForm.errors | json }}
+  </pre>
+</div>
