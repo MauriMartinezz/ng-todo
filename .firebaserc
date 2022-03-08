@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ng-users-e3880": {
+      "hosting": {
+        "users": [
+          "ng-users-e3880"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ng-users-e3880"
+  }
+}
