@@ -40,19 +40,20 @@
         >
       </div>
 
-      <div class="col-6">
+      <div class="col-md-6 col-12">
         <label class="form-label">Password</label>
         <input
           type="password"
           class="form-control"
           formControlName="password"
+          placeholder="Password"
         />
         <span class="form-text text-danger" *ngIf="labelIsValid('password')"
           >Password must be 8 characters long and contain a number</span
         >
       </div>
 
-      <div class="col-6">
+      <div class="col-md-6 col-12">
         <label class="form-label">Confirm password</label>
         <input
           type="password"
@@ -91,12 +92,4 @@
       </span>
     </div>
   </div>
-  <!--
-  <pre>
-    {{ registerForm.value | json }}
-  </pre>
-  <pre>
-    {{ registerForm.errors | json }}
-  </pre>
-</div> -->
 </div>
