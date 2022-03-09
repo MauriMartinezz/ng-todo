@@ -12,10 +12,7 @@ export class RegisterFormComponent implements OnInit {
     {
       name: ['', [Validators.required, Validators.minLength(2)]],
       lastName: ['', [Validators.required, Validators.minLength(2)]],
-      email: [
-        '',
-        [Validators.required, Validators.pattern(this.vs.emailPattern)],
-      ],
+      email: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(8)]],
       confirmPassword: ['', [Validators.required]],
     },
@@ -23,6 +20,7 @@ export class RegisterFormComponent implements OnInit {
       validators: [
         this.vs.validateEmail(),
         this.vs.validateEqualLabels('password', 'confirmPassword'),
+        this.vs.validatePasswordFormat(),
       ],
     }
   );
@@ -30,6 +28,13 @@ export class RegisterFormComponent implements OnInit {
   constructor(private fb: FormBuilder, private vs: ValidatorsService) {}
 
   ngOnInit(): void {}
+
+  labelIsValid(label: string): boolean | undefined {
+    return (
+      this.registerForm.get(label)?.touched &&
+      this.registerForm.get(label)?.invalid
+    );
+  }
 
   sendForm() {
     console.log(this.registerForm);

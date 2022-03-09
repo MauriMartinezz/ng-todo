@@ -9,7 +9,9 @@
 
 .card .card-body input {
   border-radius: 15px;
+  border: 1px solid #749bd6;
 }
+
 .card .card-body .buttons button {
   border-radius: 15px;
   font-size: 18px;

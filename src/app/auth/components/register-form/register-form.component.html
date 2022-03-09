@@ -1,4 +1,4 @@
-<div class="card" style="width: 800px">
+<div class="card" style="max-width: 500px">
   <div class="card-body">
     <h2 class="card-title mb-4">Create an account</h2>
 
@@ -11,6 +11,9 @@
           placeholder="John"
           formControlName="name"
         />
+        <span class="form-text text-danger" *ngIf="labelIsValid('name')"
+          >Name is not valid
+        </span>
       </div>
       <div class="col-md-6">
         <label class="form-label">Last Name</label>
@@ -20,33 +23,47 @@
           placeholder="Doe"
           formControlName="lastName"
         />
+        <span class="form-text text-danger" *ngIf="labelIsValid('lastName')"
+          >Lastname is not valid
+        </span>
       </div>
       <div class="col-12">
-        <label class="form-label">email</label>
+        <label class="form-label">Email</label>
         <input
           type="text"
           class="form-control"
           placeholder="jhon@mail.com"
           formControlName="email"
         />
+        <span class="form-text text-danger" *ngIf="labelIsValid('email')"
+          >Hmm.. it doesn't look like an email</span
+        >
       </div>
 
       <div class="col-6">
-        <label class="form-label">password</label>
+        <label class="form-label">Password</label>
         <input
           type="password"
           class="form-control"
           formControlName="password"
         />
+        <span class="form-text text-danger" *ngIf="labelIsValid('password')"
+          >Password must be 8 characters long and contain a number</span
+        >
       </div>
 
       <div class="col-6">
-        <label class="form-label">confirm password</label>
+        <label class="form-label">Confirm password</label>
         <input
           type="password"
           class="form-control"
           formControlName="confirmPassword"
         />
+        <span
+          class="form-text text-danger"
+          *ngIf="labelIsValid('confirmPassword')"
+          >Passwords must match</span
+        >
       </div>
       <div class="col-12">
         <button
@@ -74,11 +91,12 @@
       </span>
     </div>
   </div>
-
+  <!--
   <pre>
     {{ registerForm.value | json }}
   </pre>
   <pre>
     {{ registerForm.errors | json }}
   </pre>
+</div> -->
 </div>
