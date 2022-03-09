@@ -38,6 +38,9 @@
             Login with google
           </button>
         </div>
+        <div class="formError text-danger text-start mt-3" *ngIf="error">
+          {{ error }}
+        </div>
       </form>
       <div class="card__redirect my-4 text-start text-body">
         <span
