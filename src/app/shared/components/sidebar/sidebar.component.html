@@ -1,1 +1,62 @@
-<p>sidebar works!</p>
+<div class="sidebar">
+  <div class="sidebar_content" [class]="{ active: isSidebarOpen }">
+    <div class="logo_content">
+      <div class="logo">
+        <i class="bx bxl-angular"></i>
+        <div class="logo_name">CRUD</div>
+      </div>
+      <i class="bx bx-menu" id="btn" (click)="toggleSidebar()"></i>
+    </div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <i class="bx bx-search" (click)="search()"></i>
+        <input type="text" placeholder="Search..." />
+        <span *ngIf="showTooltips" class="tooltip">Search</span>
+      </li>
+
+      <li class="nav-item">
+        <a routerLink="/home">
+          <i class="bx bx-home"></i>
+          <span class="link_name">Home</span>
+        </a>
+        <span *ngIf="showTooltips" class="tooltip">Home</span>
+      </li>
+
+      <li class="nav-item">
+        <a routerLink="/home">
+          <i class="bx bxs-user"></i>
+          <span class="link_name">Profile</span>
+        </a>
+        <span *ngIf="showTooltips" class="tooltip">Profile</span>
+      </li>
+
+      <li class="nav_item">
+        <a routerLink="/home">
+          <i class="bx bx-heart"></i>
+          <span class="link_name">Saved</span>
+        </a>
+        <span *ngIf="showTooltips" class="tooltip">Saved</span>
+      </li>
+
+      <li class="nav_item">
+        <a routerLink="/home">
+          <i class="bx bx-cart"></i>
+          <span class="link_name">Cart</span>
+        </a>
+        <span *ngIf="showTooltips" class="tooltip">Cart</span>
+      </li>
+    </ul>
+
+    <div class="profile_content">
+      <div class="profile">
+        <div class="profile_details">
+          <img src="/assets/avatar.png" alt="" />
+          <div class="user__info" *ngIf="showUserInfo">
+            <div class="user__info--username">Mauricio martinez</div>
+            <div class="user__info--mail">Web developer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
