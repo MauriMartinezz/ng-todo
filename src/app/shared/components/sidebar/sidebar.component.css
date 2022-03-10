@@ -126,8 +126,6 @@
   /* padding: 0; */
   padding: 10px 10px;
 }
-.sidebar_content.active .profile_content .profile {
-}
 
 .sidebar .profile_content .profile .profile_details {
   display: flex;
